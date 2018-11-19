@@ -11,6 +11,13 @@ import java.util.List;
 public class ProjectData extends BaseData {
       private List<Project> data = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return "ProjectData{" +
+                "data=" + data +
+                '}';
+    }
+
     public List<Project> getData() {
         return data;
     }

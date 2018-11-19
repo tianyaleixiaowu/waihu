@@ -9,10 +9,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author wuweifeng wrote on 2018/11/12.
@@ -24,10 +24,10 @@ public class SubManager extends BaseManager {
     private SubRepository subRepository;
 
     public void fetchProject(String prjid) {
-        Map<String, String> map = new HashMap<>();
-        map.put("func", "getsubscribe");
-        map.put("tokenid", getToken());
-        map.put("prjid", prjid);
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+        map.add("func", "getsubscribe");
+        map.add("tokenid", getToken());
+        map.add("prjid", prjid);
 
         try {
             SubData subData = restTemplate.postForEntity(baseUrl, map,
@@ -47,11 +47,11 @@ public class SubManager extends BaseManager {
     }
 
     public void createSub(String prjid, String memo) {
-        Map<String, String> map = new HashMap<>();
-        map.put("func", "createsubscribe");
-        map.put("tokenid", getToken());
-        map.put("prjid", prjid);
-        map.put("memo", memo);
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+        map.add("func", "createsubscribe");
+        map.add("tokenid", getToken());
+        map.add("prjid", prjid);
+        map.add("memo", memo);
 
         try {
             SubCreateData subData = restTemplate.postForEntity(baseUrl, map,

@@ -19,6 +19,15 @@ public class Project extends BaseIdEntity {
     private String type;
     private String name;
 
+    @Override
+    public String toString() {
+        return "Project{" +
+                "prjid='" + prjid + '\'' +
+                ", type='" + type + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public String getPrjid() {
         return prjid;
     }

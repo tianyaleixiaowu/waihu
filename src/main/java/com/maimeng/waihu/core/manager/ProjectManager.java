@@ -8,11 +8,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author wuweifeng wrote on 2018/11/12.
@@ -25,9 +25,9 @@ public class ProjectManager extends BaseManager {
 
     @Scheduled(cron = "0 0/30 1 * * ?")
     public void fetchProject() {
-        Map<String, String> map = new HashMap<>();
-        map.put("func", "getproject");
-        map.put("tokenid", getToken());
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+        map.add("func", "getproject");
+        map.add("tokenid", getToken());
 
         try {
             ProjectData loginData = restTemplate.postForEntity(baseUrl, map,

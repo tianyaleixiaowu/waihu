@@ -14,6 +14,7 @@ import javax.annotation.Resource;
 public class BaseManager {
     @Value("${base.uri}")
     protected String baseUrl;
+
     @Resource
     protected RestTemplate restTemplate;
     @Resource

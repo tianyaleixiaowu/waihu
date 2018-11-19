@@ -7,10 +7,10 @@ import com.maimeng.waihu.core.util.Constant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author wuweifeng wrote on 2018/11/12.
@@ -23,14 +23,14 @@ public class PhoneRecordManager extends BaseManager {
     private PhoneRecordRepository phoneRecordRepository;
 
     public void record() {
-        Map<String, String> map = new HashMap<>();
-        map.put("func", "exportcallrecord");
-        map.put("prjid", "");
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+        map.add("func", "exportcallrecord");
+        map.add("prjid", "");
         //非必填
-        map.put("subid", "");
-        map.put("starttime", "");
-        map.put("endtime", "");
-        map.put("tokenid", getToken());
+        map.add("subid", "");
+        map.add("starttime", "");
+        map.add("endtime", "");
+        map.add("tokenid", getToken());
 
         try {
             PhoneRecordData phoneRecordData = restTemplate.postForEntity(baseUrl, map,

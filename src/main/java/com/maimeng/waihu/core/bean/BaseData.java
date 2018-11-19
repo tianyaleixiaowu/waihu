@@ -7,6 +7,14 @@ public class BaseData {
     private String result;
     private String tokenid;
 
+    @Override
+    public String toString() {
+        return "BaseData{" +
+                "result='" + result + '\'' +
+                ", tokenid='" + tokenid + '\'' +
+                '}';
+    }
+
     public String getResult() {
         return result;
     }

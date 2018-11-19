@@ -10,6 +10,8 @@ import com.xiaoleilu.hutool.util.BeanUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
@@ -33,14 +35,14 @@ public class PhoneImportManager extends BaseManager {
         phoneMap.put("123", Arrays.asList("1", "2", "3"));
         String jsonStr = JSONUtil.toJsonStr(phoneMap);
         String phone = Base64.encode(jsonStr);
-        Map<String, String> map = new HashMap<>();
-        map.put("func", "importnumber");
-        map.put("tokenid", getToken());
-        map.put("prjid", getToken());
-        map.put("subid", getToken());
-        map.put("data", phone);
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+        map.add("func", "importnumber");
+        map.add("tokenid", getToken());
+        map.add("prjid", getToken());
+        map.add("subid", getToken());
+        map.add("data", phone);
         //去重方式，1 表示不去重，2 表示本列表去重，3 本预约去重，4 本项目去重
-        map.put("duplicates", phone);
+        map.add("duplicates", phone);
 
         try {
             PhoneImportData phoneImportData = restTemplate.postForEntity(baseUrl, map,

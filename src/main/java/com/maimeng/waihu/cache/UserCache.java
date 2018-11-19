@@ -18,10 +18,10 @@ public class UserCache {
     }
 
     public String getToken() {
-        Object token = cache.get("token");
+        Cache.ValueWrapper token = cache.get("token");
         if (token == null) {
             return null;
         }
-        return token.toString();
+        return token.get().toString();
     }
 }

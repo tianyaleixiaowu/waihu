@@ -19,6 +19,9 @@ spring:
     caffeine:
       spec: maximumSize=500,expireAfterAccess=36000s   #最后一次写入或访问后经过固定时间过期
 base:
-  uri: xxx
+  uri: http://47.92.138.179/interface.php
+  corpname: mmkj
+  username: 1000
+  password: 010888
 logging:
   file: ./logback.log
