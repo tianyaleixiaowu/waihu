@@ -3,6 +3,7 @@ package com.maimeng.waihu.core.model;
 import com.maimeng.waihu.core.model.base.BaseIdEntity;
 
 import javax.persistence.Entity;
+import java.util.Date;
 
 /**
  * @author wuweifeng wrote on 2018/11/12.
@@ -26,6 +27,18 @@ public class PhoneRecord extends BaseIdEntity {
 
     private String subid;
     private String prjid;
+
+    private Date createTime = new Date();
+
+    @Override
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    @Override
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
     public String getSubid() {
         return subid;

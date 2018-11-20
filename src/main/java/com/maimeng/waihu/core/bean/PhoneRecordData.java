@@ -1,6 +1,9 @@
 package com.maimeng.waihu.core.bean;
 
 import com.maimeng.waihu.core.model.PhoneRecord;
+import com.xiaoleilu.hutool.json.JSONArray;
+import com.xiaoleilu.hutool.json.JSONUtil;
+import com.xiaoleilu.hutool.lang.Base64;
 
 import java.util.List;
 
@@ -10,7 +13,8 @@ import java.util.List;
 public class PhoneRecordData extends BaseData {
     private String prjid;
     private String subid;
-    private List<PhoneRecord> data;
+    private String data;
+    private List<PhoneRecord> records;
 
     public String getPrjid() {
         return prjid;
@@ -28,11 +32,21 @@ public class PhoneRecordData extends BaseData {
         this.subid = subid;
     }
 
-    public List<PhoneRecord> getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(List<PhoneRecord> data) {
+    public void setData(String data) {
         this.data = data;
+    }
+
+    public List<PhoneRecord> getRecords() {
+        String recordStr = Base64.decodeStr(data);
+        JSONArray jsonArray = JSONUtil.parseArray(recordStr);
+        return jsonArray.toList(PhoneRecord.class);
+    }
+
+    public void setRecords(List<PhoneRecord> records) {
+        this.records = records;
     }
 }
