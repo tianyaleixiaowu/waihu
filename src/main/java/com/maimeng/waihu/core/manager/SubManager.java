@@ -2,17 +2,20 @@ package com.maimeng.waihu.core.manager;
 
 import com.maimeng.waihu.core.bean.SubCreateData;
 import com.maimeng.waihu.core.bean.SubData;
+import com.maimeng.waihu.core.model.Project;
 import com.maimeng.waihu.core.model.Sub;
 import com.maimeng.waihu.core.repository.SubRepository;
 import com.maimeng.waihu.core.util.Constant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author wuweifeng wrote on 2018/11/12.
@@ -22,8 +25,18 @@ public class SubManager extends BaseManager {
     private Logger logger = LoggerFactory.getLogger(getClass());
     @Resource
     private SubRepository subRepository;
+    @Resource
+    private ProjectManager projectManager;
 
-    public void fetchProject(String prjid) {
+    @Scheduled(cron = "0 0/40 1 * * ?")
+    public void pp() {
+        List<Project> projectList = projectManager.findAll();
+        for (Project project : projectList) {
+            fetchsub(project.getPrjid());
+        }
+    }
+
+    public void fetchsub(String prjid) {
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("func", "getsubscribe");
         map.add("tokenid", getToken());

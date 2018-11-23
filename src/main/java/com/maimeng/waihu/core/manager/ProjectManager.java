@@ -58,4 +58,8 @@ public class ProjectManager extends BaseManager {
             save(project);
         }
     }
+
+    public List<Project> findAll() {
+        return projectRepository.findAll();
+    }
 }

@@ -1,94 +1,27 @@
-2018-11-20 10:58:58.047  INFO 11948 --- [main] com.maimeng.waihu.WaihuApplication       : Starting WaihuApplication on weifengdeMacBook-Pro.local with PID 11948 (/Users/wuwf/project/waihu/target/classes started by wuwf in /Users/wuwf/project/waihu)
-2018-11-20 10:58:58.062  INFO 11948 --- [main] com.maimeng.waihu.WaihuApplication       : The following profiles are active: local
-2018-11-20 10:58:59.301  INFO 11948 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2018-11-20 10:58:59.411  INFO 11948 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97ms. Found 5 repository interfaces.
-2018-11-20 10:58:59.959  INFO 11948 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$33b767ac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-11-20 10:59:00.731  INFO 11948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2018-11-20 10:59:00.752  INFO 11948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2018-11-20 10:59:00.752  INFO 11948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
-2018-11-20 10:59:00.760  INFO 11948 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/wuwf/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2018-11-20 10:59:00.866  INFO 11948 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2018-11-20 10:59:00.866  INFO 11948 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2696 ms
-2018-11-20 10:59:00.915  INFO 11948 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2018-11-20 10:59:00.916  INFO 11948 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2018-11-20 10:59:00.916  INFO 11948 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
-2018-11-20 10:59:00.917  INFO 11948 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2018-11-20 10:59:00.917  INFO 11948 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'UrlFilter' to urls: [/*]
-2018-11-20 10:59:00.917  INFO 11948 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
-2018-11-20 10:59:01.190  INFO 11948 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2018-11-23 20:20:57.467  INFO 7264 --- [main] com.maimeng.waihu.WaihuApplicationTests  : Starting WaihuApplicationTests on weifengdeMacBook-Pro.local with PID 7264 (started by wuwf in /Users/wuwf/project/waihu)
+2018-11-23 20:20:57.500  INFO 7264 --- [main] com.maimeng.waihu.WaihuApplicationTests  : The following profiles are active: local
+2018-11-23 20:20:58.866  INFO 7264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-11-23 20:20:59.017  INFO 7264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134ms. Found 5 repository interfaces.
+2018-11-23 20:20:59.896  INFO 7264 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$948d2072] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-23 20:21:00.448  INFO 7264 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2018-11-20 10:59:01.295  INFO 11948 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2018-11-20 10:59:01.298  INFO 11948 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2018-11-20 10:59:01.615  INFO 11948 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2018-11-20 10:59:01.765  INFO 11948 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2018-11-20 10:59:02.197  INFO 11948 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2018-11-20 10:59:02.211  INFO 11948 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2018-11-20 10:59:03.296  INFO 11948 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2018-11-20 10:59:04.179  INFO 11948 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2018-11-20 10:59:04.230  WARN 11948 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2018-11-20 10:59:04.382  INFO 11948 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2018-11-20 10:59:04.486  INFO 11948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2018-11-20 10:59:04.490  INFO 11948 --- [main] com.maimeng.waihu.WaihuApplication       : Started WaihuApplication in 7.408 seconds (JVM running for 8.327)
-2018-11-20 11:01:29.346  INFO 11948 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2018-11-20 11:01:29.346  INFO 11948 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2018-11-20 11:01:29.358  INFO 11948 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
-2018-11-20 11:01:29.435  INFO 11948 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2018-11-20 11:01:31.174  INFO 11948 --- [http-nio-8080-exec-1] c.m.w.core.manager.PhoneImportManager    : 返回值：BaseData{result='failed', tokenid=''}
-2018-11-20 11:01:31.175  INFO 11948 --- [http-nio-8080-exec-1] c.m.w.core.manager.PhoneImportManager    : 获取sub信息失败
-2018-11-20 11:01:31.228  INFO 11948 --- [http-nio-8080-exec-1] c.m.w.core.manager.PhoneImportManager    : 返回值：BaseData{result='failed', tokenid=''}
-2018-11-20 11:01:31.229  INFO 11948 --- [http-nio-8080-exec-1] c.m.w.core.manager.PhoneImportManager    : 获取sub信息失败
-2018-11-20 11:28:16.148  INFO 12083 --- [main] com.maimeng.waihu.WaihuApplicationTests  : Starting WaihuApplicationTests on weifengdeMacBook-Pro.local with PID 12083 (started by wuwf in /Users/wuwf/project/waihu)
-2018-11-20 11:28:16.178  INFO 12083 --- [main] com.maimeng.waihu.WaihuApplicationTests  : The following profiles are active: local
-2018-11-20 11:28:19.466  INFO 12083 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2018-11-20 11:28:19.806  INFO 12083 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 315ms. Found 5 repository interfaces.
-2018-11-20 11:28:21.523  INFO 12083 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bd646f67] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-11-20 11:28:22.233  INFO 12083 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2018-11-20 11:28:22.520  INFO 12083 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2018-11-20 11:28:22.523  INFO 12083 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2018-11-20 11:28:22.889  INFO 12083 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2018-11-20 11:28:23.683  INFO 12083 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2018-11-20 11:28:25.084  INFO 12083 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2018-11-20 11:28:25.162  INFO 12083 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2018-11-20 11:28:27.887  INFO 12083 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2018-11-20 11:28:32.288  INFO 12083 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2018-11-20 11:28:32.455  WARN 12083 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2018-11-20 11:28:33.106  INFO 12083 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2018-11-20 11:28:33.283  INFO 12083 --- [main] com.maimeng.waihu.WaihuApplicationTests  : Started WaihuApplicationTests in 17.973 seconds (JVM running for 19.539)
-2018-11-20 11:28:33.704  INFO 12083 --- [main] c.m.waihu.core.manager.LoginManager      : 返回值：BaseData{result='success', tokenid='60e809b60b021ed0d0ef3d13b6d39d2b'}
-2018-11-20 11:28:33.835  INFO 12083 --- [main] c.m.waihu.core.manager.ProjectManager    : 返回值：ProjectData{data=[Project{prjid='1', type='手工拨号', name='手工拨号'}]}
-2018-11-20 11:28:33.895  INFO 12083 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2018-11-20 11:28:34.367  INFO 12083 --- [Thread-2] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2018-11-20 11:28:34.369  INFO 12083 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2018-11-20 11:28:34.371  INFO 12083 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2018-11-20 11:28:34.375  INFO 12083 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2018-11-20 11:28:34.390  INFO 12083 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2018-11-20 11:30:26.304  INFO 12124 --- [main] com.maimeng.waihu.WaihuApplicationTests  : Starting WaihuApplicationTests on weifengdeMacBook-Pro.local with PID 12124 (started by wuwf in /Users/wuwf/project/waihu)
-2018-11-20 11:30:26.309  INFO 12124 --- [main] com.maimeng.waihu.WaihuApplicationTests  : The following profiles are active: local
-2018-11-20 11:30:27.798  INFO 12124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2018-11-20 11:30:27.960  INFO 12124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 146ms. Found 5 repository interfaces.
-2018-11-20 11:30:28.832  INFO 12124 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$dbc896b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-11-20 11:30:29.394  INFO 12124 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2018-11-20 11:30:29.627  INFO 12124 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2018-11-20 11:30:29.630  INFO 12124 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2018-11-20 11:30:29.912  INFO 12124 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2018-11-20 11:30:30.221  INFO 12124 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2018-11-20 11:30:30.917  INFO 12124 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2018-11-20 11:30:30.945  INFO 12124 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2018-11-20 11:30:32.383  INFO 12124 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2018-11-20 11:30:34.865  INFO 12124 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2018-11-20 11:30:34.988  WARN 12124 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2018-11-20 11:30:35.467  INFO 12124 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2018-11-20 11:30:35.611  INFO 12124 --- [main] com.maimeng.waihu.WaihuApplicationTests  : Started WaihuApplicationTests in 9.936 seconds (JVM running for 11.462)
-2018-11-20 11:30:36.079  INFO 12124 --- [main] c.m.waihu.core.manager.LoginManager      : 返回值：BaseData{result='success', tokenid='c6eeb6ee926f94a320c423de48e01268'}
-2018-11-20 11:30:36.238  INFO 12124 --- [main] c.m.waihu.core.manager.ProjectManager    : 返回值：ProjectData{data=[Project{prjid='1', type='手工拨号', name='手工拨号'}]}
-2018-11-20 11:30:36.295  INFO 12124 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2018-11-20 11:30:36.618  INFO 12124 --- [Thread-2] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2018-11-20 11:30:36.620  INFO 12124 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2018-11-20 11:30:36.624  INFO 12124 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2018-11-20 11:30:36.627  INFO 12124 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2018-11-20 11:30:36.642  INFO 12124 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-11-23 20:21:00.706  INFO 7264 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2018-11-23 20:21:00.708  INFO 7264 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-11-23 20:21:00.981  INFO 7264 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-11-23 20:21:01.225  INFO 7264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-11-23 20:21:01.789  INFO 7264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-11-23 20:21:01.814  INFO 7264 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-11-23 20:21:03.291  INFO 7264 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-23 20:21:05.990  INFO 7264 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-11-23 20:21:06.105  WARN 7264 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-11-23 20:21:06.669  INFO 7264 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2018-11-23 20:21:06.876  INFO 7264 --- [main] com.maimeng.waihu.WaihuApplicationTests  : Started WaihuApplicationTests in 10.024 seconds (JVM running for 11.357)
+2018-11-23 20:21:07.425  INFO 7264 --- [main] c.m.waihu.core.manager.LoginManager      : 返回值：BaseData{result='success', tokenid='9a4c3eb61bca73bb4fb198298f29c331'}
+2018-11-23 20:21:07.553  INFO 7264 --- [main] c.m.waihu.core.manager.ProjectManager    : 返回值：ProjectData{data=[Project{prjid='1', type='手工拨号', name='手工拨号'}, Project{prjid='3', type='外呼项目', name='火花思维'}]}
+2018-11-23 20:21:07.615  INFO 7264 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-11-23 20:21:08.154  INFO 7264 --- [Thread-2] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2018-11-23 20:21:08.156  INFO 7264 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-11-23 20:21:08.159  INFO 7264 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-23 20:21:08.162  INFO 7264 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-11-23 20:21:08.182  INFO 7264 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
