@@ -5,6 +5,7 @@ import com.xiaoleilu.hutool.json.JSONArray;
 import com.xiaoleilu.hutool.json.JSONUtil;
 import com.xiaoleilu.hutool.lang.Base64;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,7 +47,7 @@ public class PhoneRecordData extends BaseData {
             JSONArray jsonArray = JSONUtil.parseArray(recordStr);
             return jsonArray.toList(PhoneRecord.class);
         } catch (Exception e) {
-            return null;
+            return new ArrayList<>();
         }
     }
 

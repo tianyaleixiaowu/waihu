@@ -22,6 +22,6 @@ base:
   uri: http://47.92.138.179/interface.php
   corpname: ${CORPNAME:mmkj}
   username: ${USERNAME:1000}
-  password: ${USERNAME:010888}
+  password: ${PASSWORD:010888}
 logging:
   file: ./logback.log
