@@ -31,17 +31,18 @@ public class PhoneRecordManager extends BaseManager {
     @Resource
     private SubManager subManager;
 
-    @Scheduled(cron = "0 0 * * * ?")
-    public void fetchRecord() {
+    @Scheduled(cron = "0 0/15 * * * ?")
+    public void fetchRecord() throws InterruptedException {
         List<Sub> projectList = subManager.findAll();
         for (Sub sub : projectList) {
             record(sub.getPrjid(), sub.getSubid());
+            Thread.sleep(5000);
         }
     }
 
     public void record(String prjid, String subid) {
         //找到最新的一条
-        PhoneRecord phoneRecord = phoneRecordRepository.findFirstByOrderByBegintimeTempDesc();
+        PhoneRecord phoneRecord = phoneRecordRepository.findFirstBySubidOrderByBegintimeTempDesc(subid);
         Date date;
         if (phoneRecord == null) {
             date = DateUtil.lastWeek();

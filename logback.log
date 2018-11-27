@@ -811,3 +811,38 @@
 2018-11-27 13:59:29.936  INFO 15083 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2018-11-27 13:59:29.939  INFO 15083 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2018-11-27 13:59:29.959  INFO 15083 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-11-27 14:12:13.351  INFO 15207 --- [main] com.maimeng.waihu.WaihuApplicationTests  : Starting WaihuApplicationTests on weifengdeMacBook-Pro.local with PID 15207 (started by wuwf in /Users/wuwf/project/waihu)
+2018-11-27 14:12:13.354  INFO 15207 --- [main] com.maimeng.waihu.WaihuApplicationTests  : The following profiles are active: local
+2018-11-27 14:12:14.833  INFO 15207 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-11-27 14:12:15.021  INFO 15207 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 173ms. Found 5 repository interfaces.
+2018-11-27 14:12:15.750  INFO 15207 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$20f29405] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-27 14:12:16.395  INFO 15207 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-27 14:12:16.625  INFO 15207 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2018-11-27 14:12:16.628  INFO 15207 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-11-27 14:12:16.885  INFO 15207 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-11-27 14:12:17.168  INFO 15207 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-11-27 14:12:17.765  INFO 15207 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-11-27 14:12:17.786  INFO 15207 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-11-27 14:12:19.591  INFO 15207 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-27 14:12:21.279  INFO 15207 --- [main] c.m.waihu.core.manager.LoginManager      : 返回值：BaseData{result='success', tokenid='9fb4315d175b0d0a2f8de745c4d506cc'}
+2018-11-27 14:12:22.400  INFO 15207 --- [main] c.m.waihu.core.manager.ProjectManager    : 返回值：ProjectData{data=[Project{prjid='4', type='外呼项目', name='瑞思预拨'}, Project{prjid='5', type='手工拨号', name='瑞思特殊手拨'}, Project{prjid='6', type='外呼项目', name='VIPKID预拨'}, Project{prjid='7', type='手工拨号', name='VIPKID特殊手拨'}, Project{prjid='8', type='外呼项目', name='火花思维预拨'}, Project{prjid='9', type='手工拨号', name='火花思维特殊手拨'}]}
+2018-11-27 14:12:22.444  INFO 15207 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-11-27 14:12:24.808  INFO 15207 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：BaseData{result='success', tokenid='9fb4315d175b0d0a2f8de745c4d506cc'}
+2018-11-27 14:12:24.889  INFO 15207 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：BaseData{result='success', tokenid='9fb4315d175b0d0a2f8de745c4d506cc'}
+2018-11-27 14:12:24.969  INFO 15207 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：BaseData{result='success', tokenid='9fb4315d175b0d0a2f8de745c4d506cc'}
+2018-11-27 14:12:25.033  INFO 15207 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：BaseData{result='success', tokenid='9fb4315d175b0d0a2f8de745c4d506cc'}
+2018-11-27 14:12:25.109  INFO 15207 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：BaseData{result='success', tokenid='9fb4315d175b0d0a2f8de745c4d506cc'}
+2018-11-27 14:12:25.186  INFO 15207 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：BaseData{result='success', tokenid='9fb4315d175b0d0a2f8de745c4d506cc'}
+2018-11-27 14:12:29.095  INFO 15207 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-11-27 14:12:29.221  WARN 15207 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-11-27 14:12:29.653  INFO 15207 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2018-11-27 14:12:29.784  INFO 15207 --- [main] com.maimeng.waihu.WaihuApplicationTests  : Started WaihuApplicationTests in 17.326 seconds (JVM running for 18.528)
+2018-11-27 14:12:30.023  INFO 15207 --- [main] c.m.waihu.core.manager.LoginManager      : 返回值：BaseData{result='success', tokenid='8f9d655a3bf945429151dc1f7d006dad'}
+2018-11-27 14:12:30.091  INFO 15207 --- [main] c.m.waihu.core.manager.ProjectManager    : 返回值：ProjectData{data=[Project{prjid='4', type='外呼项目', name='瑞思预拨'}, Project{prjid='5', type='手工拨号', name='瑞思特殊手拨'}, Project{prjid='6', type='外呼项目', name='VIPKID预拨'}, Project{prjid='7', type='手工拨号', name='VIPKID特殊手拨'}, Project{prjid='8', type='外呼项目', name='火花思维预拨'}, Project{prjid='9', type='手工拨号', name='火花思维特殊手拨'}]}
+2018-11-27 14:12:30.197  INFO 15207 --- [Thread-2] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2018-11-27 14:12:30.199  INFO 15207 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-11-27 14:12:30.202  INFO 15207 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-27 14:12:30.205  INFO 15207 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-11-27 14:12:30.223  INFO 15207 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
