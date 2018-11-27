@@ -33,7 +33,7 @@ public class WaihuApplication {
         Thread.sleep(2000);
         subManager.fetch();
         Thread.sleep(3000);
-        phoneRecordManager.fetchRecord();
+        //phoneRecordManager.fetchRecord();
     }
 
     public static void main(String[] args) {

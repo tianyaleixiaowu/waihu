@@ -31,7 +31,7 @@ public class PhoneRecordManager extends BaseManager {
     @Resource
     private SubManager subManager;
 
-    @Scheduled(cron = "0 0 21 * * ?")
+    @Scheduled(cron = "0 0 * * * ?")
     public void fetchRecord() {
         List<Sub> projectList = subManager.findAll();
         for (Sub sub : projectList) {
@@ -41,13 +41,16 @@ public class PhoneRecordManager extends BaseManager {
 
     public void record(String prjid, String subid) {
         //找到最新的一条
-        PhoneRecord phoneRecord = phoneRecordRepository.findFirstByOrderByIdDesc();
+        PhoneRecord phoneRecord = phoneRecordRepository.findFirstByOrderByBegintimeTempDesc();
         Date date;
         if (phoneRecord == null) {
             date = DateUtil.lastWeek();
         } else {
-            //最新的一条的创建时间
-            date = phoneRecord.getCreateTime();
+            //Calendar calendar = Calendar.getInstance();
+            //calendar.set(Calendar.HOUR_OF_DAY, calendar.get(Calendar.HOUR_OF_DAY) - 1);
+            ////最新的一条的创建时间
+            //date = calendar.getTime();
+            date = phoneRecord.getBegintimeTemp();
         }
 
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
@@ -81,6 +84,7 @@ public class PhoneRecordManager extends BaseManager {
           for (PhoneRecord phoneRecord : phoneRecordData.getRecords()) {
               phoneRecord.setPrjid(prjid);
               phoneRecord.setSubid(subid);
+              phoneRecord.setBegintimeTemp(DateUtil.parse(phoneRecord.getBegintime()));
               phoneRecordRepository.save(phoneRecord);
           }
     }
