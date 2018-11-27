@@ -15,6 +15,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,7 +45,7 @@ public class PhoneRecordManager extends BaseManager {
         PhoneRecord phoneRecord = phoneRecordRepository.findFirstBySubidOrderByBegintimeTempDesc(subid);
         Long begin;
         if (phoneRecord == null) {
-            begin = DateUtil.lastWeek().getTime();
+            begin = DateUtil.beginOfDay(new Date()).getTime();
         } else {
             begin = phoneRecord.getBegintimeTemp();
         }
