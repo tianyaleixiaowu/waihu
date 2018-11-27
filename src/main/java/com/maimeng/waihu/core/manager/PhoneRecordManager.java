@@ -2,6 +2,7 @@ package com.maimeng.waihu.core.manager;
 
 import com.maimeng.waihu.core.bean.PhoneRecordData;
 import com.maimeng.waihu.core.model.PhoneRecord;
+import com.maimeng.waihu.core.model.Sub;
 import com.maimeng.waihu.core.repository.PhoneRecordRepository;
 import com.maimeng.waihu.core.util.Constant;
 import com.xiaoleilu.hutool.date.DateUtil;
@@ -12,8 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author wuweifeng wrote on 2018/11/12.
@@ -24,14 +27,24 @@ public class PhoneRecordManager extends BaseManager {
 
     @Resource
     private PhoneRecordRepository phoneRecordRepository;
+    @Resource
+    private SubManager subManager;
 
-    @Scheduled(cron = "0 0/50 0 * * ?")
-    public void record() {
+    @PostConstruct
+    @Scheduled(cron = "0 0 21 * * ?")
+    public void fetchRecord() {
+        List<Sub> projectList = subManager.findAll();
+        for (Sub sub : projectList) {
+            record(sub.getPrjid(), sub.getSubid());
+        }
+    }
+
+    public void record(String prjid, String subid) {
         //找到最新的一条
         PhoneRecord phoneRecord = phoneRecordRepository.findFirstByOrderByIdDesc();
         Date date;
         if (phoneRecord == null) {
-            date = DateUtil.beginOfDay(new Date());
+            date = DateUtil.lastWeek();
         } else {
             //最新的一条的创建时间
             date = phoneRecord.getCreateTime();
@@ -39,11 +52,11 @@ public class PhoneRecordManager extends BaseManager {
 
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("func", "exportcallrecord");
-        //map.add("prjid", "");
+        map.add("prjid", prjid);
         //非必填
-        //map.add("subid", "");
-        map.add("starttime", date.getTime() + "");
-        map.add("endtime", System.currentTimeMillis() + "");
+        map.add("subid", subid);
+        map.add("starttime", date.getTime() / 1000 + "");
+        map.add("endtime", System.currentTimeMillis() / 1000 + "");
         map.add("tokenid", getToken());
 
         try {

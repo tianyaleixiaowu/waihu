@@ -4,7 +4,7 @@ spring:
   application:
     name: waihu
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/waihu?useUnicode=true&characterEncoding=UTF8
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${DB_NAME:waihu}?useUnicode=true&characterEncoding=UTF8
     username: ${MYSQL_USER:root}
     password: ${MYSQL_PASS:root}
   jpa:
@@ -20,8 +20,8 @@ spring:
       spec: maximumSize=500,expireAfterAccess=36000s   #最后一次写入或访问后经过固定时间过期
 base:
   uri: http://47.92.138.179/interface.php
-  corpname: mmkj
-  username: 1000
-  password: 010888
+  corpname: ${CORPNAME:mmkj}
+  username: ${USERNAME:1000}
+  password: ${USERNAME:010888}
 logging:
   file: ./logback.log

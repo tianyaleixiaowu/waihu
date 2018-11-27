@@ -42,8 +42,12 @@ public class PhoneRecordData extends BaseData {
 
     public List<PhoneRecord> getRecords() {
         String recordStr = Base64.decodeStr(data);
-        JSONArray jsonArray = JSONUtil.parseArray(recordStr);
-        return jsonArray.toList(PhoneRecord.class);
+        try {
+            JSONArray jsonArray = JSONUtil.parseArray(recordStr);
+            return jsonArray.toList(PhoneRecord.class);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public void setRecords(List<PhoneRecord> records) {

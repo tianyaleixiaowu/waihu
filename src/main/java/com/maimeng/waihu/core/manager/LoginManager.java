@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+import javax.annotation.PostConstruct;
+
 /**
  * @author wuweifeng wrote on 2018/11/12.
  */
@@ -25,13 +27,14 @@ public class LoginManager extends BaseManager {
     /**
      * 半小时登录一次
      */
+    @PostConstruct
     @Scheduled(cron = "0 0/30 0 * * ?")
     public void login() {
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("func", "login");
-        map.add("corpname", "mmkj");
-        map.add("username", "1000");
-        map.add("password", "010888");
+        map.add("corpname", corpname);
+        map.add("username", username);
+        map.add("password", password);
 
         try {
             LoginData loginData = restTemplate.postForEntity(baseUrl, map,

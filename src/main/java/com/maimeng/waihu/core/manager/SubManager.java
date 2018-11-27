@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -28,7 +29,8 @@ public class SubManager extends BaseManager {
     @Resource
     private ProjectManager projectManager;
 
-    @Scheduled(cron = "0 0/40 1 * * ?")
+    @PostConstruct
+    @Scheduled(cron = "0 0/40 21 * * ?")
     public void pp() {
         List<Project> projectList = projectManager.findAll();
         for (Project project : projectList) {
@@ -89,6 +91,10 @@ public class SubManager extends BaseManager {
         if (old == null) {
             subRepository.save(sub);
         }
+    }
+
+    public List<Sub> findAll() {
+        return subRepository.findAll();
     }
 
     private void saveSub(SubCreateData subData) {

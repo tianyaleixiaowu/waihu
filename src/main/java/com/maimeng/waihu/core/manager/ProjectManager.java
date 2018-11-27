@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -23,7 +24,8 @@ public class ProjectManager extends BaseManager {
     @Resource
     private ProjectRepository projectRepository;
 
-    @Scheduled(cron = "0 0/30 1 * * ?")
+    @PostConstruct
+    @Scheduled(cron = "0 0/30 21 * * ?")
     public void fetchProject() {
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("func", "getproject");
