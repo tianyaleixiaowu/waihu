@@ -15,7 +15,6 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import javax.annotation.Resource;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -36,22 +35,18 @@ public class PhoneRecordManager extends BaseManager {
         List<Sub> projectList = subManager.findAll();
         for (Sub sub : projectList) {
             record(sub.getPrjid(), sub.getSubid());
-            Thread.sleep(5000);
+            Thread.sleep(50000);
         }
     }
 
     public void record(String prjid, String subid) {
         //找到最新的一条
         PhoneRecord phoneRecord = phoneRecordRepository.findFirstBySubidOrderByBegintimeTempDesc(subid);
-        Date date;
+        Long begin;
         if (phoneRecord == null) {
-            date = DateUtil.lastWeek();
+            begin = DateUtil.lastWeek().getTime();
         } else {
-            //Calendar calendar = Calendar.getInstance();
-            //calendar.set(Calendar.HOUR_OF_DAY, calendar.get(Calendar.HOUR_OF_DAY) - 1);
-            ////最新的一条的创建时间
-            //date = calendar.getTime();
-            date = phoneRecord.getBegintimeTemp();
+            begin = phoneRecord.getBegintimeTemp();
         }
 
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
@@ -59,7 +54,7 @@ public class PhoneRecordManager extends BaseManager {
         map.add("prjid", prjid);
         //非必填
         map.add("subid", subid);
-        map.add("starttime", date.getTime() / 1000 + "");
+        map.add("starttime", begin / 1000 + "");
         map.add("endtime", System.currentTimeMillis() / 1000 + "");
         map.add("tokenid", getToken());
 
@@ -85,7 +80,7 @@ public class PhoneRecordManager extends BaseManager {
           for (PhoneRecord phoneRecord : phoneRecordData.getRecords()) {
               phoneRecord.setPrjid(prjid);
               phoneRecord.setSubid(subid);
-              phoneRecord.setBegintimeTemp(DateUtil.parse(phoneRecord.getBegintime()));
+              phoneRecord.setBegintimeTemp(DateUtil.parse(phoneRecord.getBegintime()).getTime());
               phoneRecordRepository.save(phoneRecord);
           }
     }

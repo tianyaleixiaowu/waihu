@@ -28,15 +28,15 @@ public class PhoneRecord extends BaseIdEntity {
     private String subid;
     private String prjid;
 
-    private Date begintimeTemp;
+    private Long begintimeTemp;
 
     private Date createTime = new Date();
 
-    public Date getBegintimeTemp() {
+    public Long getBegintimeTemp() {
         return begintimeTemp;
     }
 
-    public void setBegintimeTemp(Date begintimeTemp) {
+    public void setBegintimeTemp(Long begintimeTemp) {
         this.begintimeTemp = begintimeTemp;
     }
 
