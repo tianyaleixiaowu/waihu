@@ -8,12 +8,12 @@ import com.maimeng.waihu.core.util.Constant;
 import com.xiaoleilu.hutool.date.DateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
@@ -22,6 +22,7 @@ import java.util.List;
  * @author wuweifeng wrote on 2018/11/12.
  */
 @Service
+@Order(4)
 public class PhoneRecordManager extends BaseManager {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -30,7 +31,6 @@ public class PhoneRecordManager extends BaseManager {
     @Resource
     private SubManager subManager;
 
-    @PostConstruct
     @Scheduled(cron = "0 0 21 * * ?")
     public void fetchRecord() {
         List<Sub> projectList = subManager.findAll();

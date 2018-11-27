@@ -9,12 +9,12 @@ import com.maimeng.waihu.core.util.Constant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
+import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -22,6 +22,7 @@ import java.util.List;
  * @author wuweifeng wrote on 2018/11/12.
  */
 @Service
+@Order(3)
 public class SubManager extends BaseManager {
     private Logger logger = LoggerFactory.getLogger(getClass());
     @Resource
@@ -29,9 +30,8 @@ public class SubManager extends BaseManager {
     @Resource
     private ProjectManager projectManager;
 
-    @PostConstruct
     @Scheduled(cron = "0 0/40 21 * * ?")
-    public void pp() {
+    public void fetch() {
         List<Project> projectList = projectManager.findAll();
         for (Project project : projectList) {
             fetchsub(project.getPrjid());
@@ -105,6 +105,9 @@ public class SubManager extends BaseManager {
 
     private void saveSub(SubData subData) {
         String prjid = subData.getPrjid();
+        if (subData.getData() == null) {
+            return;
+        }
         for (Sub sub : subData.getData()) {
             sub.setPrjid(prjid);
             save(sub);

@@ -5,17 +5,17 @@ import com.maimeng.waihu.core.util.Constant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import javax.annotation.PostConstruct;
-
 /**
  * @author wuweifeng wrote on 2018/11/12.
  */
 @Service
+@Order(1)
 public class LoginManager extends BaseManager {
     private Logger logger = LoggerFactory.getLogger(getClass());
     @Value("${base.username}")
@@ -27,7 +27,6 @@ public class LoginManager extends BaseManager {
     /**
      * 半小时登录一次
      */
-    @PostConstruct
     @Scheduled(cron = "0 0/30 0 * * ?")
     public void login() {
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();

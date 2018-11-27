@@ -6,12 +6,12 @@ import com.maimeng.waihu.core.repository.ProjectRepository;
 import com.maimeng.waihu.core.util.Constant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -19,12 +19,12 @@ import java.util.List;
  * @author wuweifeng wrote on 2018/11/12.
  */
 @Service
+@Order(2)
 public class ProjectManager extends BaseManager {
     private Logger logger = LoggerFactory.getLogger(getClass());
     @Resource
     private ProjectRepository projectRepository;
 
-    @PostConstruct
     @Scheduled(cron = "0 0/30 21 * * ?")
     public void fetchProject() {
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
