@@ -8,4 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface SubRepository extends JpaRepository<Sub, Integer> {
     Sub findFirstBySubid(String subid);
+
+    Sub findFirstByName(String name);
 }

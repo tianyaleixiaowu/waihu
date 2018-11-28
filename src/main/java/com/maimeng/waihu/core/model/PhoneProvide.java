@@ -21,7 +21,17 @@ public class PhoneProvide extends BaseIdEntity {
 
     private String remark1;
     private String remark2;
+
+    private String subname;
     private Date createTime;
+
+    public String getSubname() {
+        return subname;
+    }
+
+    public void setSubname(String subname) {
+        this.subname = subname;
+    }
 
     public Integer getAge() {
         return age;

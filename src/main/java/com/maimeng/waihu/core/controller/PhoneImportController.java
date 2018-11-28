@@ -1,6 +1,7 @@
 package com.maimeng.waihu.core.controller;
 
 import com.maimeng.waihu.core.manager.PhoneImportManager;
+import com.maimeng.waihu.core.manager.PhoneProvideManager;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,12 +19,19 @@ import javax.annotation.Resource;
 public class PhoneImportController {
     @Resource
     private PhoneImportManager phoneImportManager;
-
+    @Resource
+    private PhoneProvideManager phoneProvideManager;
 
     @RequestMapping
-    public Object importData(Integer beginId, Integer endId) {
-        return phoneImportManager.importPhone(beginId, endId);
+    public Object importdd() throws InterruptedException {
+        phoneProvideManager.importData();
+        return "ok";
     }
+
+    //@RequestMapping
+    //public Object importData(Integer beginId, Integer endId) {
+    //    return phoneImportManager.importPhone(beginId, endId);
+    //}
 
 
 }

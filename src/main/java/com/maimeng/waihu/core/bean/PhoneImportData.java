@@ -16,8 +16,18 @@ public class PhoneImportData extends BaseData {
 
     private String successnum;
 
+    private String msg;
+
     //重复的数量
     private String repeatnum;
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     public String getSubid() {
         return subid;

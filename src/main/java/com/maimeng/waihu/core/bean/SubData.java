@@ -13,6 +13,14 @@ public class SubData extends BaseData {
 
     private List<Sub> data = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return "SubData{" +
+                "prjid='" + prjid + '\'' +
+                ", data=" + data +
+                '}';
+    }
+
     public String getPrjid() {
         return prjid;
     }

@@ -61,7 +61,7 @@ public class SubManager extends BaseManager {
         }
     }
 
-    public void createSub(String prjid, String memo) {
+    public Sub createSub(String prjid, String memo) {
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("func", "createsubscribe");
         map.add("tokenid", getToken());
@@ -74,33 +74,40 @@ public class SubManager extends BaseManager {
                     .getBody();
             logger.info("返回值：" + subData);
             if (Constant.SUCCESS.equals(subData.getResult())) {
-                saveSub(subData);
-
+                return saveSub(subData, memo);
             } else {
                 logger.info("获取sub信息失败");
+                return null;
             }
         } catch (Exception e) {
             logger.info("获取sub信息失败");
             e.printStackTrace();
+            return null;
         }
     }
 
 
-    private void save(Sub sub) {
+    private Sub save(Sub sub) {
         Sub old = subRepository.findFirstBySubid(sub.getSubid());
         if (old == null) {
-            subRepository.save(sub);
+            return subRepository.save(sub);
         }
+        return old;
+    }
+
+    public Sub findByName(String name) {
+        return subRepository.findFirstByName(name);
     }
 
     public List<Sub> findAll() {
         return subRepository.findAll();
     }
 
-    private void saveSub(SubCreateData subData) {
+    private Sub saveSub(SubCreateData subData, String memo) {
         Sub sub = new Sub();
         BeanUtils.copyProperties(subData, sub);
-        save(sub);
+        sub.setName(memo);
+        return save(sub);
     }
 
     private void saveSub(SubData subData) {

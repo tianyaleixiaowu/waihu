@@ -12,6 +12,15 @@ public class SubCreateData extends BaseData {
 
     private String prjid;
 
+    @Override
+    public String toString() {
+        return "SubCreateData{" +
+                "subid='" + subid + '\'' +
+                ", name='" + name + '\'' +
+                ", prjid='" + prjid + '\'' +
+                '}';
+    }
+
     public String getSubid() {
         return subid;
     }

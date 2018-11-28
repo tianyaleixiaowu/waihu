@@ -17,8 +17,27 @@ public class Sub extends BaseIdEntity {
      * 预约名称
      */
     private String name;
+    private String status;
 
     private String prjid;
+
+    @Override
+    public String toString() {
+        return "Sub{" +
+                "subid='" + subid + '\'' +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                ", prjid='" + prjid + '\'' +
+                '}';
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getPrjid() {
         return prjid;

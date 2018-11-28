@@ -20,8 +20,8 @@ spring:
       spec: maximumSize=500,expireAfterAccess=36000s   #最后一次写入或访问后经过固定时间过期
 base:
   uri: http://47.92.138.179/interface.php
-  corpname: ${CORPNAME:metadata}
+  corpname: ${CORPNAME:mmkj}
   username: ${USERNAME:1000}
-  password: ${PASSWORD:metadata2018}
+  password: ${PASSWORD:010888}
 logging:
   file: ./logback.log

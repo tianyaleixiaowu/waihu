@@ -41,8 +41,9 @@ public class PhoneImportManager extends BaseManager {
         map.add("subid", subid);
         map.add("data", phone);
         //去重方式，1 表示不去重，2 表示本列表去重，3 本预约去重，4 本项目去重
-        map.add("duplicates", "2");
+        map.add("duplicates", "1");
 
+        System.out.println(map);
         try {
             PhoneImportData phoneImportData = restTemplate.postForEntity(baseUrl, map,
                     PhoneImportData.class)
@@ -56,19 +57,19 @@ public class PhoneImportManager extends BaseManager {
                 save(phoneImport);
                 return "成功";
             } else {
-                logger.info("获取sub信息失败");
-                return "获取sub信息失败";
+                logger.info("导入失败");
+                return "导入失败";
             }
         } catch (Exception e) {
-            logger.info("获取sub信息失败");
+            logger.info("导入失败");
             e.printStackTrace();
-            return "获取sub信息失败";
+            return "导入失败";
         }
 
     }
 
-    public String importPhone(Integer begin, Integer end) {
-        List<PhoneProvide> phoneProvides = phoneProvideManager.findByIdBetween(begin, end);
+
+    public String importPhone(List<PhoneProvide> phoneProvides) {
         //按subid进行分类
         MultiValueMap<String, PhoneProvide> multiValueMap = new LinkedMultiValueMap<>();
         for (PhoneProvide phoneProvide : phoneProvides) {
@@ -82,14 +83,21 @@ public class PhoneImportManager extends BaseManager {
             Map<String, List<String>> phoneMap = new HashMap<>();
             //phoneImport(String subid, String prjid, Map < String, List < String >> phoneMap)
             for (PhoneProvide phoneProvide : list) {
-                phoneMap.put(phoneProvide.getMobile(), Arrays.asList(phoneProvide.getName(), phoneProvide.getAge() + "",
-                        phoneProvide.getRemark1()));
+                //phoneMap.put(phoneProvide.getMobile(), Arrays.asList(phoneProvide.getName(), phoneProvide.getAge() + "",
+                //        phoneProvide.getRemark1()));
+                phoneMap.put(phoneProvide.getMobile(), Arrays.asList(
+                                phoneProvide.getRemark1()));
             }
 
             result.add(phoneImport(subId, list.get(0).getPrjid(), phoneMap));
         }
 
         return result.toString();
+    }
+
+    public String importPhone(Integer begin, Integer end) {
+        List<PhoneProvide> phoneProvides = phoneProvideManager.findByIdBetween(begin, end);
+        return importPhone(phoneProvides);
     }
 
 
