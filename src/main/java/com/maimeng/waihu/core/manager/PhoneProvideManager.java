@@ -77,8 +77,8 @@ public class PhoneProvideManager {
         int listSize = list.size();
         //子集合的长度
         int toIndex = 500;
-        for (int i = 0; i < list.size(); i += 100) {
-            if (i + 100 > listSize) {
+        for (int i = 0; i < list.size(); i += 500) {
+            if (i + 500 > listSize) {
                 toIndex = listSize - i;
             }
             List<PhoneProvide> newList = list.subList(i, i + toIndex);
