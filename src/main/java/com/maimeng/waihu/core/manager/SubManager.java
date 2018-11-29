@@ -30,7 +30,7 @@ public class SubManager extends BaseManager {
     @Resource
     private ProjectManager projectManager;
 
-    @Scheduled(cron = "0 0 * * * ?")
+    @Scheduled(cron = "0 0/45 * * * ?")
     public void fetch() {
         List<Project> projectList = projectManager.findAll();
         for (Project project : projectList) {
