@@ -350,3 +350,40 @@
 2018-11-29 14:57:03.316  INFO 8305 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2018-11-29 14:57:03.322  INFO 8305 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2018-11-29 14:57:03.341  INFO 8305 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-11-29 15:43:29.580  INFO 8715 --- [main] com.maimeng.waihu.WaihuApplicationTests  : Starting WaihuApplicationTests on weifengdeMacBook-Pro.local with PID 8715 (started by wuwf in /Users/wuwf/project/waihu)
+2018-11-29 15:43:29.586  INFO 8715 --- [main] com.maimeng.waihu.WaihuApplicationTests  : The following profiles are active: local
+2018-11-29 15:43:31.921  INFO 8715 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-11-29 15:43:32.163  INFO 8715 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 193ms. Found 5 repository interfaces.
+2018-11-29 15:43:33.059  INFO 8715 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8ae4c1d0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-29 15:43:33.731  INFO 8715 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-29 15:43:34.080  INFO 8715 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2018-11-29 15:43:34.083  INFO 8715 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-11-29 15:43:34.451  INFO 8715 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-11-29 15:43:34.826  INFO 8715 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-11-29 15:43:35.665  INFO 8715 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-11-29 15:43:35.698  INFO 8715 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-11-29 15:43:37.855  INFO 8715 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-29 15:43:39.803  INFO 8715 --- [main] c.m.waihu.core.manager.LoginManager      : 返回值：BaseData{result='success', tokenid='711fcaeedfa5be9916c9172f1e5e011f'}
+2018-11-29 15:43:40.917  INFO 8715 --- [main] c.m.waihu.core.manager.ProjectManager    : 返回值：ProjectData{data=[Project{prjid='1', type='手工拨号', name='手工拨号'}, Project{prjid='3', type='外呼项目', name='火花思维'}]}
+2018-11-29 15:43:40.965  INFO 8715 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-11-29 15:43:43.470  INFO 8715 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：SubData{prjid='4', data=null}
+2018-11-29 15:43:43.544  INFO 8715 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：SubData{prjid='5', data=null}
+2018-11-29 15:43:43.609  INFO 8715 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：SubData{prjid='6', data=null}
+2018-11-29 15:43:43.671  INFO 8715 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：SubData{prjid='7', data=null}
+2018-11-29 15:43:43.737  INFO 8715 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：SubData{prjid='8', data=[Sub{subid='149', name='预约测试', status='已暂停', prjid='null'}, Sub{subid='150', name='201811281522_[896725]', status='已暂停', prjid='null'}]}
+2018-11-29 15:43:43.826  INFO 8715 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：SubData{prjid='9', data=null}
+2018-11-29 15:43:43.893  INFO 8715 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：SubData{prjid='1', data=[Sub{subid='1', name='手工预约', status='进行中', prjid='null'}]}
+2018-11-29 15:43:43.962  INFO 8715 --- [main] c.maimeng.waihu.core.manager.SubManager  : 返回值：SubData{prjid='3', data=[Sub{subid='7', name='hh1122', status='进行中', prjid='null'}]}
+2018-11-29 15:43:48.534  INFO 8715 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-11-29 15:43:48.817  WARN 8715 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-11-29 15:43:49.633  INFO 8715 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2018-11-29 15:43:49.863  INFO 8715 --- [main] com.maimeng.waihu.WaihuApplicationTests  : Started WaihuApplicationTests in 21.787 seconds (JVM running for 23.9)
+2018-11-29 15:43:50.079  INFO 8715 --- [main] c.m.waihu.core.manager.LoginManager      : 返回值：BaseData{result='success', tokenid='c7918b0cac64d70da68bbac89c1fa605'}
+2018-11-29 15:43:50.149  INFO 8715 --- [main] c.m.waihu.core.manager.ProjectManager    : 返回值：ProjectData{data=[Project{prjid='1', type='手工拨号', name='手工拨号'}, Project{prjid='3', type='外呼项目', name='火花思维'}]}
+2018-11-29 15:43:50.242  INFO 8715 --- [Thread-2] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2018-11-29 15:43:50.243  INFO 8715 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-11-29 15:43:50.246  INFO 8715 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-29 15:43:50.250  INFO 8715 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-11-29 15:43:50.270  INFO 8715 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

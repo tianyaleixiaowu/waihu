@@ -31,7 +31,7 @@ public class PhoneRecordManager extends BaseManager {
     @Resource
     private SubManager subManager;
 
-    @Scheduled(cron = "0 0/15 * * * ?")
+    @Scheduled(cron = "0 */15 * * * ?")
     public void fetchRecord() throws InterruptedException {
         List<Sub> projectList = subManager.findAll();
         for (Sub sub : projectList) {
