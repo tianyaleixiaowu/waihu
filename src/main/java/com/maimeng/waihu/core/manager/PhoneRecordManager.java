@@ -35,6 +35,7 @@ public class PhoneRecordManager extends BaseManager {
     public void fetchRecord() throws InterruptedException {
         List<Sub> projectList = subManager.findAll();
         for (Sub sub : projectList) {
+            logger.info("拉取subId为" + sub.getSubid() + ",subName=" + sub.getName() + "的通话记录");
             record(sub.getPrjid(), sub.getSubid());
             Thread.sleep(50000);
         }
