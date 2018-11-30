@@ -25,7 +25,7 @@ public class ProjectManager extends BaseManager {
     @Resource
     private ProjectRepository projectRepository;
 
-    @Scheduled(cron = "0 0/30 21 * * ?")
+    @Scheduled(cron = "0 */30 * * * ?")
     public void fetchProject() {
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("func", "getproject");
