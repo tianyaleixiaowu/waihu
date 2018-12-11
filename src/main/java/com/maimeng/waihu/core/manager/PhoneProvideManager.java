@@ -29,7 +29,7 @@ public class PhoneProvideManager {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Scheduled(cron = "0 */10 * * * ?")
+    @Scheduled(cron = "0 */2 * * * ?")
     @Transactional(rollbackFor = Exception.class)
     public void importData() throws InterruptedException {
         PhoneProvide phoneProvide = phoneProvideRepository.findFirstByOrderById();
