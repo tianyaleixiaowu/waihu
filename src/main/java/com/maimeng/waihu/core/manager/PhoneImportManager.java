@@ -86,7 +86,7 @@ public class PhoneImportManager extends BaseManager {
                 //phoneMap.put(phoneProvide.getMobile(), Arrays.asList(phoneProvide.getName(), phoneProvide.getAge() + "",
                 //        phoneProvide.getRemark1()));
                 phoneMap.put(phoneProvide.getMobile(), Arrays.asList(
-                                phoneProvide.getRemark1()));
+                                phoneProvide.getRemark1(), phoneProvide.getRemark2()));
             }
 
             result.add(phoneImport(subId, list.get(0).getPrjid(), phoneMap));
