@@ -21,6 +21,19 @@ public class PhoneImportData extends BaseData {
     //重复的数量
     private String repeatnum;
 
+    @Override
+    public String toString() {
+        return "PhoneImportData{" +
+                "subid='" + subid + '\'' +
+                ", name='" + name + '\'' +
+                ", prjid='" + prjid + '\'' +
+                ", total='" + total + '\'' +
+                ", successnum='" + successnum + '\'' +
+                ", msg='" + msg + '\'' +
+                ", repeatnum='" + repeatnum + '\'' +
+                '}';
+    }
+
     public String getMsg() {
         return msg;
     }
