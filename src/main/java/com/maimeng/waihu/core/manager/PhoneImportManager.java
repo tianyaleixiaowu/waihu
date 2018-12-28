@@ -45,10 +45,12 @@ public class PhoneImportManager extends BaseManager {
 
         System.out.println(map);
         try {
-            PhoneImportData phoneImportData = restTemplate.postForEntity(baseUrl, map,
-                    PhoneImportData.class)
+            String s = restTemplate.postForEntity(baseUrl, map,
+                    String.class)
                     .getBody();
-            logger.info("返回值：" + phoneImportData);
+
+            logger.info("返回值：" + s);
+            PhoneImportData phoneImportData = JSONUtil.toBean(JSONUtil.parseObj(s), PhoneImportData.class);
             if (Constant.SUCCESS.equals(phoneImportData.getResult())) {
                 //成功
                 PhoneImport phoneImport = new PhoneImport();
